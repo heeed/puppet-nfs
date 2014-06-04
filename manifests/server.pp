@@ -32,8 +32,6 @@ class nfs::server {
     pattern    => 'rpc.mountd',
   }
 
-  include concat::setup
-
   concat { '/etc/exports':
     mode   => '0644',
     owner  => 'root',
