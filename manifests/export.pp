@@ -4,9 +4,6 @@
 #
 # === Parameters
 #
-# [*ensure*]
-#  present / absent. Default: present
-#
 # [*export*]
 #  A hash of hosts and options for an export. Allows one to specify
 #  a single nfs export with multiple hosts & options per host
@@ -29,12 +26,10 @@
 # Steffen L. Norgren
 #
 define nfs::export (
-  $ensure = present,
   $export = {},
 ) {
 
   concat::fragment { "nfs_export_${name}":
-    ensure  => $ensure,
     target  => '/etc/exports',
     order   => '10',
     content => template('nfs/exports.erb'),
