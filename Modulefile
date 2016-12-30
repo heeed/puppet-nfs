@@ -8,4 +8,4 @@ source       'git://github.com/stankevich/puppet-nfs'
 summary      'Puppet module for NFS'
 description  'Installs and manages NFS client and server.'
 
-dependency   'ripienaar/concat', '>= 0.2.0'
+dependency   'puppetlabs/concat', '>= 2.2.0'
